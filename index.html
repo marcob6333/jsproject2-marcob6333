@@ -12,7 +12,7 @@
         </style>
         <title>Free API Testing</title>
     </head>
-<body>
+    <body>
 <!-- HTML -->
 
 <!-- This jQuery script allows us to easily use $.ajax() -->
@@ -23,7 +23,6 @@
 // JS
    
 // https://www.metaweather.com/api/ , https://api.oceandrivers.com/static/docs.html#!/ODWeather/getAemetStation_get_0
-
 $.ajax({
     url: 'https://api.oceandrivers.com/static/docs.html#!/ODWeather/getAemetStation_get_0',
     dataType: 'json',
@@ -32,6 +31,17 @@ $.ajax({
     }
 });
 
+// Title Label
+var title = document.write("NYC Weather Tracker");
+
+// Hold any extra data that will be used
+var weather = {
+    "Temperature": "",
+}
+
+for(var i = 0; i < data.length; i++) {
+    console.log(data[i]);
+}
 
 
         </script>
