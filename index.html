@@ -8,7 +8,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
         <style>
             /* CSS */
-            
+
         </style>
         <title>Free API Testing</title>
     </head>
@@ -21,28 +21,56 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // JS
-   
+
 // https://www.metaweather.com/api/ , https://api.oceandrivers.com/static/docs.html#!/ODWeather/getAemetStation_get_0
 $.ajax({
-    url: 'https://api.oceandrivers.com/static/docs.html#!/ODWeather/getAemetStation_get_0',
+    url: 'https://data.cityofnewyork.us/resource/ajxm-kzmj.json',
     dataType: 'json',
     success: function(data) {
         console.log(data);
+
+
+
+// Title
+
+document.write("<h1>" + "" + "</h1>");
+
+// Collects the data in Console
+
+var answer = prompt("What borough do you live in? (Ex. Brooklyn, Bronx, Manhattan, Queens, Staten Island)");
+
+document.write(answer + " Gardens Near You:"); // Single Garden asked for above
+document.write("<br>");
+document.write("<hr>");
+
+
+
+if(answer == "Bronx"){ // Make answer = "X"
+    answer = "X";
+}
+console.log(answer);
+
+answer = answer.substring(0,1);
+
+
+
+for(var i = 0; i < data.length; i++) {  // Ask Mr. Mueller to explain how I can pull data using website (Completed Task)
+    if(data[i].boro == answer){
+        document.write(data[i].garden_name);
+        document.write("<br>");
     }
+}
+
+
+
+console.log("Hello! Testing, testing!"); // To show if code if no errors
+
+
+
+}
 });
 
-// Title Label
-var title = document.write("NYC Weather Tracker");
-
-// Hold any extra data that will be used
-var weather = {
-    "Temperature": "",
-}
-
-for(var i = 0; i < data.length; i++) {
-    console.log(data[i]);
-}
-
+console.log("Hello! Testing, testing!");
 
         </script>
     </body>
